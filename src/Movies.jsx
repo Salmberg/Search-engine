@@ -17,10 +17,8 @@ const Movies = (props) => {
 
         const data = await response.json();
 
-        // Logga ut API-svaret för att felsöka
         console.log('API Response:', data);
 
-        // Kontrollera om API-svaret innehåller en lista med filmer
         if (data && data.results && Array.isArray(data.results)) {
           setMovieData(data.results);
         } else {
@@ -42,6 +40,7 @@ const Movies = (props) => {
       setMovieData(filteredMovies);
     }
   };
+
 
   return (
     <section className='movies-section'>
@@ -67,7 +66,7 @@ const Movies = (props) => {
                   src={`https://image.tmdb.org/t/p/w500${movie.poster_path}`}
                   alt={movie.title}
                 />
-                {/* Visa andra filmattribut här */}
+                {/* Visa fler filmattribut här */}
               </li>
             ))}
         </ul>
